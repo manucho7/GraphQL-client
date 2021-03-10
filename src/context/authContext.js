@@ -5,8 +5,6 @@ const firebaseReducer = (state, action) => {
     switch (action.type) {
         case "LOGGED_IN_USER":
             return { ...state, user: action.payload }
-            
-    
         default:
             return state
             
@@ -27,10 +25,7 @@ const AuthProvider = ({ children }) => {
 
     const  value = {state, dispatch}
 
-    return 
-        <AuthContext.Provider value={value}>
-            {children}
-        </AuthContext.Provider>
+    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
 //export context & provider
